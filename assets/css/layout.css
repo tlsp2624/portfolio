@@ -1,0 +1,198 @@
+@import './fonts.css';
+@import './reset.css';
+@import './common.css';
+
+
+.header.hide{
+  transform: translateY(-100%);
+}
+
+.header .cont{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: .4s;
+  z-index: 90;  
+  background-color: transparent;
+  backdrop-filter: blur(7px);
+}
+
+.header .top-group{ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin: 25px 48px 0 48px;
+  
+}
+.header .top-group .logo{
+  font-family: 'Bosch';
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.header .top-group .menu-box{
+  position: relative;
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: bold;
+  color: #0b1e25;
+  letter-spacing: -.03em;
+}
+.header .top-group .menu-box .close{
+ position: absolute;
+ top: 0;
+ left: 0;
+ visibility: hidden;
+ opacity: 0;
+  transition: .5s;
+}
+
+.header .top-group .menu-box::after{
+  display: inline-block;
+  width: 19px;
+  height: 20px;
+  content: '';
+  background: url(https://uploads-ssl.webflow.com/63458f1e40468a1bb7c4d1d0/6347e8c8266e9d4d49c8c59f_icon-menu.svg) no-repeat;
+  background-size: cover;
+  vertical-align: top;
+  margin-left: 10px;
+}
+
+.header .gnb{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;    
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: .8s;
+  z-index: 10;
+}
+
+.header .gnb-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.header .gnb-list a{
+  font-family: 'Bosch';
+  font-size: clamp(60px,8.8542vw,170px);
+  color: rgb(11, 30, 37);
+  line-height: 1;
+}
+.header .gnb-list a:hover{
+  color: rgb(244, 225, 218);
+}
+
+/* on일때 */
+.header .gnb.on{
+  visibility: visible;
+  opacity: 1;
+}
+
+.header .gnb.on .menu-box .menu{
+  display: none;
+}
+.header .gnb.on .menu-box .close{
+  visibility: visible;
+  opacity: 1;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+  padding-bottom: 80px;
+}
+
+.footer .contact{
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .contact .contact-box{
+  display: flex;
+  flex-direction: column;
+}
+.footer .contact span{
+  font-family: 'Bosch';
+  font-size: 70px;
+  color: #0b1e25;
+  text-transform: uppercase;
+}
+.footer .contact a{
+  font-weight: bold;
+  line-height: 1;
+}
+.footer .contact .mail{
+  margin-top: 5px;
+}
+
+.footer .link-wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer .copy{
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .footer{
+    align-items: flex-end;
+  }
+}
+
+@media (max-width: 767px) {
+  .header .top-group .logo{
+    font-size: 16px;
+  }
+  .header .top-group{
+    margin: 10px 25px 0 25px;
+  }
+  .header .top-group .menu-box{
+    font-size: 12px;
+  }
+  .header .top-group .menu-box::after{
+    width: 15px;
+    height: 16px;
+    margin-left: 3px;
+  }
+
+  .header .gnb-list a{   
+    line-height: 1.2;
+  }
+
+  .footer{    
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .footer .contact span{
+    font-size: 50px;
+  }
+  .footer .contact .contact-box{
+    margin-top: 20px;
+  }
+
+  .footer .copy{
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 13px;
+  }
+
+}
